@@ -21,15 +21,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-
-    private fun displayBiometricPrompt(biometricCallback: BiometricCallback) {
-        BiometricPrompt.Builder(context)
-            .setTitle(title)
-            .setSubtitle(subtitle)
-            .setDescription(description)
-            .setNegativeButton(
-                negativeButtonText, context.getMainExecutor(),
-                DialogInterface.OnClickListener { dialogInterface, i -> biometricCallback.onAuthenticationCancelled() })
-            .build()
-    }
 }
